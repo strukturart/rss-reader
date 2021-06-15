@@ -571,6 +571,17 @@ let rss_fetcher = function (
                 .getAttribute("url");
             }
 
+            /*
+            if (el[i].getElementsByTagNameNS("*", "videoId").length > 0) {
+              console.log("yeah")
+            }
+
+
+            if (el[i].getElementsByTagName("id").length > 0) {
+              console.log("yeah")
+            }
+            */
+
             if (el[i].querySelector("link") !== null) {
               item_link = el[i].querySelector("link").getAttribute("href");
             }
@@ -1360,6 +1371,7 @@ function open_url() {
   }
 
   if (document.activeElement.getAttribute("data-media") == "youtube") {
+    yt_player.onYouTubeIframeAPIReady("M7lc1UVf-VE");
     console.log("youtube");
     document
       .querySelector("div#source-page iframe")
